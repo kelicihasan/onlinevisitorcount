@@ -11,13 +11,9 @@ using System.Web.Mvc;
 namespace BRC.Derya.WebUI.Controllers
 {
         // GET: Tr
-        public ActionResult Index()
-        {
-            ViewBag.OnlineVisitor = HttpContext.Application["OnlineVisitor"];
-            return View();
-        }
         public ActionResult test()
         {
+            ViewBag.OnlineVisitor = HttpContext.Application["OnlineVisitor"];
             return View();
         }
     }
