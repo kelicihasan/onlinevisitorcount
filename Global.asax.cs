@@ -1,9 +1,3 @@
-﻿using Autofac;
-using Autofac.Integration.Mvc;
-using BRC.Derya.Business.Abstract;
-using BRC.Derya.Business.Concrete;
-using BRC.Derya.DataAccsess.Abstract;
-using BRC.Derya.DataAccsess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
