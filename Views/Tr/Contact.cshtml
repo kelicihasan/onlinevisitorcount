@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  BRC.Derya.WebUI.Models.IletisimListViewModel
+
+
+<div class="main">
+    <div class="wrapper">
+        <article class="col-1">
+            <div class="indent-left">
+                <h3 class="p1">Adres</h3>
+                <figure class="indent-bot">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.160155669765!2d29.00241531478462!3d41.04362662519884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7a1ed3f592b%3A0x9e7760e5c47f40e7!2sDerya+Balik!5e0!3m2!1str!2str!4v1552893390205" width="240" height="180" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </figure>
+                <dl>
+                    <dt class="p1">Derya Balık Çiğ Balık ve Lokanta</dt>
+                    <dd><span>Çiğ Balık:</span> 0212 260 20 16</dd>
+                    <dd>
+                        <span>Lokanta:</span> 0212 258 24 20
+                    </dd>
+                    <dd>
+                        <span>Adres:</span><br />Sinanpaşa Mah/Semt Köyiçi Cad.20 A
+                        BEŞİKTAŞ/İSTANBUL
+                    </dd>
+                    <dd><span>Ç. Saatleri:</span>08:00 - 21:00</dd>
+                </dl>
+            </div>
+        </article>
+        <h3 class="p1">İLETİŞİM FORMU</h3>
+        <form id="contact-form" action="#" method="post" enctype="multipart/form-data">
+            @using (Html.BeginForm("Contact","Tr",FormMethod.Post))
+            {
+                <fieldset>
+                    <label>
+                        <span class="text-form">Ad Soyad:</span>
+                        <input name="ad_soyad" type="text" />
+                    </label>
+                    <label>
+                        <span class="text-form">Email:</span>
+                        <input name="email" type="text" />
+                    </label>
+                    <label>
+                        <span class="text-form">Telefon:</span>
+                        <input name="telefon" type="text" />
+                    </label>
+                    <div class="wrapper">
+                        <div class="text-form">Mesaj:</div>
+                        <div class="extra-wrap">
+                            <textarea name="mesaj"></textarea>
+                            <div class="clear"></div>
+                            <input type="submit" value="Gönder" class="button-2" style="height:30px;width:100px;" />
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+}
