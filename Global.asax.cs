@@ -20,23 +20,6 @@ namespace BRC.Derya.WebUI
         {
             var builder = new ContainerBuilder();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
-            
-            builder.RegisterType<IletisimManager>().As<IIletisimService>();
-            builder.RegisterType<EfIletisimDal>().As<IIletisimDal>();
-            builder.RegisterType<GaleriManager>().As<IGaleriService>();
-            builder.RegisterType<EfGaleriDal>().As<IGaleriDal>();
-            builder.RegisterType<KullaniciManager>().As<IKullaniciService>();
-            builder.RegisterType<EfKullaniciDal>().As<IKUllaniciDal>();
-            builder.RegisterType<MedyaManager>().As<IMedyaService>();
-            builder.RegisterType<EfMedyaDal>().As<IMedyaDal>();
-            builder.RegisterType<SliderManager>().As<ISliderService>();
-            builder.RegisterType<EfSliderDal>().As<ISliderDal>();
-            builder.RegisterType<UrunlerManager>().As<IUrunlerService>();
-            builder.RegisterType<EfUrunlerDal>().As<IUrunlerDal>();
-
-            IContainer container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //test
